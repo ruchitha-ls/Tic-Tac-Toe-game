@@ -1,0 +1,94 @@
+body {
+  font-family: 'Fredoka One', cursive;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.game-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.75); /*white background */
+  padding: 2.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 2.5rem;
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #c2623a; /*Brownish font color*/
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px; 
+  margin-bottom: 25px;
+}
+
+.cell {
+  background: white;
+  border: none; 
+  border-radius: 1.5rem; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: bold;
+}
+
+.cell:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cell.x, .cell.o {
+  animation: popIn 0.3s ease-out;
+}
+
+/* New player-specific colors */
+.cell.x {
+  color: #4A90E2; /* Bright Blue */
+}
+
+.cell.o {
+  color: #F5A623; /* Bright Orange */
+}
+
+/* Style for winning cells */
+.winning-cell {
+  background-color: #50E3C2; /* Bright Teal */
+  color: white;
+  animation: celebrate 0.5s ease infinite alternate; /* Pulsing effect */
+}
+
+.message {
+  font-size: 1.5rem;
+  min-height: 2rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.btn {
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-family: 'Fredoka One', cursive; /* Use the same fun font */
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: #c2623a;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background 0.2s;
+  font-weight: bold;
+}
+
+.btn:hover {
+    background: #a85431;
+    transform: translateY(-2px);
+}
